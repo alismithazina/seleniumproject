@@ -1,3 +1,7 @@
-FROM tomcat
+FROM devopsedu/webapp
 
-ADD addressbook.war /usr/local/tomcat/webapps
+ADD website /usr/local/tomcat/webapps
+
+RUN rm /var/www/html/index.html
+
+CMD apachectl -D FOREGROUND
